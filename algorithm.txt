@@ -1,0 +1,27 @@
+Walking Motion Algorithm for Humanoid Robot:
+
+1. Initialize:
+   - Set all servo motors to 90° (standing pose)
+
+2. Step forward with the right leg:
+   - Move right hip forward
+   - Bend right knee slightly
+   - Shift balance to the left leg
+
+3. Plant right foot:
+   - Return knee to straight
+   - Shift body weight forward
+
+4. Step forward with the left leg:
+   - Move left hip forward
+   - Bend left knee
+   - Shift balance to right leg
+
+5. Repeat alternating steps
+
+6. Maintain balance:
+   - Monitor IMU sensors
+   - Adjust ankle joints as needed
+
+7. Stop motion:
+   - Bring both legs to neutral 90° pose
