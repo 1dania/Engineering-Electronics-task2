@@ -1,0 +1,36 @@
+#include <Servo.h>
+
+Servo servos[6];
+int pins[6] = {3, 5, 6, 9, 10, 11};
+
+void setup() {
+  for (int i = 0; i < 6; i++) {
+    servos[i].attach(pins[i]);
+  }
+
+  // Sweep all servos for 2 seconds
+  unsigned long startTime = millis();
+  while (millis() - startTime < 2000) {
+    for (int pos = 0; pos <= 180; pos += 5) {
+      for (int i = 0; i < 6; i++) {
+        servos[i].write(pos);
+      }
+      delay(15);
+    }
+    for (int pos = 180; pos >= 0; pos -= 5) {
+      for (int i = 0; i < 6; i++) {
+        servos[i].write(pos);
+      }
+      delay(15);
+    }
+  }
+
+  // Hold all servos at 90°
+  for (int i = 0; i < 6; i++) {
+    servos[i].write(90);
+  }
+}
+
+void loop() {
+  // Do nothing
+}
